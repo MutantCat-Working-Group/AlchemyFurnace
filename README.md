@@ -4,8 +4,9 @@
 </div>
 
 ### 一、功能简述
-- 各种编程语言的主动向外部发送信息的库。
-- 直接以代码而不是包装后的各种形式提供，坚持只有一个文件。
+- 各种编程语言的主动向外部发送信息的库，支持发送图片。
+- 直接以代码而不是包装后的各种形式提供，大多只有一个文件。
+- 如果运行设备支持联网，训练模式的时候的控制台日志，服务运行异常报错等均可使用本库发送提醒消息。
 
 ### 二、使用方法
 
@@ -28,18 +29,20 @@
 
    - 使用方法可参照Example.py
 
-   - 方法列表
+   - 功能列表
 
-     | [性质]方法名（参数列表）                                  | 说明                                                         |
-     | --------------------------------------------------------- | ------------------------------------------------------------ |
-     | [构造]AlchemyFurnace(notice_way, token, secret0, secret1) | notice_way: 通知方式 当前支持钉钉机器人（dingbot）<br/>token: 发送的token或地址等信息<br/>secret0: 发送目标的密钥的第一部分<br/>secret1: 发送目标的密钥的第二部分<br/>关于dingbot，token是机器人的token，secret0是机器人的密钥，secret1是机器人的app_key（可选） |
-     | [功能]send_message(title, message)                        |                                                              |
-     | [功能]get_ding_image_mediaid(img)                         |                                                              |
+     | [性质]方法名(参数列表) | 方法名                 | 参数列表                            | 说明                                                         |
+     | ---------------------- | ---------------------- | ----------------------------------- | ------------------------------------------------------------ |
+     | 构造                   | AlchemyFurnac          | notice_way, token, secret0, secret1 | notice_way: 通知方式 （dingbot...）<br/>token: 发送的token或地址等信息<br/>secret0: 发送目标的密钥的第一部分<br/>secret1: 发送目标的密钥的第二部分<br/>关于dingbot模式的参数中，token代表Webhook地址后面的token，secret0代表加签的密钥或AppSecret，secret1代表机器人的AppKey |
+     | 功能                   | send_message           | title, message                      | 发送消息（必填token、secret0）                               |
+     | 功能                   | get_ding_image_mediaid | img                                 | 通过图片获得钉钉开放平台的mediaid（钉钉模式下生效，必填app_key、secret0），用于在markdown中插入图片信息 |
+     | 功能                   | send_message_at        | title, message,one                  | 发送消息并且@某人<br/>关于dingbot模式中，会在群众艾特所有人  |
 
 ### 五、开发进度
 
-- [ ] 向钉钉机器人发送消息（1.0.240410）
+- [x] 向钉钉机器人发送消息（1.0.240410）
 - [ ] 向邮箱发送消息
 
 ### 六、相关项目
 
+- [MutantCat-Working-Group/Echoes: 回声 (github.com)](https://github.com/MutantCat-Working-Group/Echoes)
