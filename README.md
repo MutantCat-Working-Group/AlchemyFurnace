@@ -4,7 +4,7 @@
 </div>
 
 ### 一、功能简述
-- 各种编程语言的主动向外部发送信息的库，支持发送图片。
+- 各种编程语言的主动向外部发送信息的库，部分模式支持发送图片。
 - 直接以代码而不是包装后的各种形式提供，大多只有一个文件。
 - 如果运行设备支持联网，训练模型时候的控制台日志，服务运行异常报错等均可使用本库发送提醒消息。
 
@@ -33,10 +33,10 @@
 
      | 性质 | 方法名                 | 参数列表                            | 说明                                                         |
      | ---- | ---------------------- | ----------------------------------- | ------------------------------------------------------------ |
-     | 构造 | AlchemyFurnac          | notice_way, token, secret0, secret1 | notice_way: 通知方式 （dingbot...）<br/>token: 发送的token或地址等信息<br/>secret0: 发送目标的密钥的第一部分<br/>secret1: 发送目标的密钥的第二部分<br/>关于dingbot模式的参数中，token代表Webhook地址后面的token，secret0代表加签的密钥或AppSecret，secret1代表机器人的AppKey |
-     | 功能 | send_message           | title, message                      | 发送消息（必填token、secret0）                               |
-     | 功能 | get_ding_image_mediaid | img                                 | 通过图片获得钉钉开放平台的mediaid（钉钉模式下生效，必填app_key、secret0），用于在markdown中插入图片信息 |
-     | 功能 | send_message_at        | title, message,one                  | 发送消息并且@某人<br/>关于dingbot模式中，会在群众艾特所有人  |
+     | 构造 | AlchemyFurnac          | notice_way, token, secret0, secret1 | notice_way: 通知方式 （dingbot...）<br/>token: 发送的token或地址等信息<br/>secret0: 发送目标的密钥的第一部分<br/>secret1: 发送目标的密钥的第二部分<br/>对于dingbot模式，参数中，token代表Webhook地址后面的token，secret0代表加签的密钥或AppSecret，secret1代表机器人的AppKey |
+     | 功能 | send_message           | title, message                      | 发送消息（必填token、secret0）<br/>对于dingbot模式，发送的消息为MarkDown消息 |
+     | 功能 | get_ding_image_mediaid | img                                 | 通过图片获得钉钉开放平台的mediaid（钉钉模式下生效，必填secret1、secret0），用于在markdown中插入图片信息<br/>注意，此功能仅对dingbot模式有用 |
+     | 功能 | send_message_at        | title, message,one                  | 发送消息并且@某人<br/>对于dingbot模式，会在群中艾特所有人    |
 
 ### 五、开发进度
 
