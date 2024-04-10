@@ -13,7 +13,7 @@
 1. 在你的程序中添加对应的程序文件。
 2. 在代码中引入功能并按说明简单调用即可。
 
-### 二、语言支持
+### 三、语言支持
 
 | 语言   | 是否实现 | 版本号     |
 | ------ | -------- | ---------- |
@@ -31,12 +31,12 @@
 
    - 功能列表
 
-     | [性质]方法名(参数列表) | 方法名                 | 参数列表                            | 说明                                                         |
-     | ---------------------- | ---------------------- | ----------------------------------- | ------------------------------------------------------------ |
-     | 构造                   | AlchemyFurnac          | notice_way, token, secret0, secret1 | notice_way: 通知方式 （dingbot...）<br/>token: 发送的token或地址等信息<br/>secret0: 发送目标的密钥的第一部分<br/>secret1: 发送目标的密钥的第二部分<br/>关于dingbot模式的参数中，token代表Webhook地址后面的token，secret0代表加签的密钥或AppSecret，secret1代表机器人的AppKey |
-     | 功能                   | send_message           | title, message                      | 发送消息（必填token、secret0）                               |
-     | 功能                   | get_ding_image_mediaid | img                                 | 通过图片获得钉钉开放平台的mediaid（钉钉模式下生效，必填app_key、secret0），用于在markdown中插入图片信息 |
-     | 功能                   | send_message_at        | title, message,one                  | 发送消息并且@某人<br/>关于dingbot模式中，会在群众艾特所有人  |
+     | 性质 | 方法名                 | 参数列表                            | 说明                                                         |
+     | ---- | ---------------------- | ----------------------------------- | ------------------------------------------------------------ |
+     | 构造 | AlchemyFurnac          | notice_way, token, secret0, secret1 | notice_way: 通知方式 （dingbot...）<br/>token: 发送的token或地址等信息<br/>secret0: 发送目标的密钥的第一部分<br/>secret1: 发送目标的密钥的第二部分<br/>关于dingbot模式的参数中，token代表Webhook地址后面的token，secret0代表加签的密钥或AppSecret，secret1代表机器人的AppKey |
+     | 功能 | send_message           | title, message                      | 发送消息（必填token、secret0）                               |
+     | 功能 | get_ding_image_mediaid | img                                 | 通过图片获得钉钉开放平台的mediaid（钉钉模式下生效，必填app_key、secret0），用于在markdown中插入图片信息 |
+     | 功能 | send_message_at        | title, message,one                  | 发送消息并且@某人<br/>关于dingbot模式中，会在群众艾特所有人  |
 
 ### 五、开发进度
 
