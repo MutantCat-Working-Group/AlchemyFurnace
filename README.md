@@ -36,7 +36,7 @@
      | 构造 | AlchemyFurnac          | notice_way, token, secret0, secret1 | notice_way: 通知方式 （dingbot...）<br/>token: 发送的token或地址等信息<br/>secret0: 发送目标的密钥的第一部分<br/>secret1: 发送目标的密钥的第二部分<br/>对于dingbot模式，参数中，token代表Webhook地址后面的token，secret0代表加签的密钥或AppSecret，secret1代表机器人的AppKey |
      | 功能 | send_message           | title, message                      | 发送消息（必填token、secret0）<br/>对于dingbot模式，发送的消息为MarkDown消息 |
      | 功能 | get_ding_image_mediaid | img                                 | 通过图片获得钉钉开放平台的mediaid（钉钉模式下生效，必填secret1、secret0），用于在markdown中插入图片信息<br/>注意，此功能仅对dingbot模式有用 |
-     | 功能 | send_message_at        | title, message,one                  | 发送消息并且@某人<br/>对于dingbot模式，会在群中艾特所有人    |
+     | 功能 | send_message_at        | title, message                      | 发送消息并且@<br/>对于dingbot模式，会在群中艾特所有人        |
 
 ### 五、开发进度
 
